@@ -77,6 +77,8 @@ pub struct Config {
     pub debug: DebugConfig,
     #[knuffel(children(name = "workspace"))]
     pub workspaces: Vec<Workspace>,
+    #[knuffel(child, unwrap(argument), default = None)]
+    pub max_buffer_size: Option<usize>,
 }
 
 #[derive(knuffel::Decode, Debug, Default, PartialEq)]

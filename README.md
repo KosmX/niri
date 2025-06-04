@@ -12,7 +12,6 @@ cd niri
 cargo build --frozen --release --features default
 ```
 niri is in `niri/target/release/niri`  
-And add `max-buffer-size 1048576` to your `~/.config/niri/config.kdl` (or use a different number. 1 MB is probably overkill)
 
 This branch contains the patch, and a cargo crate-io testing override: it will use the local `wayland-rs` package instead of downloading from crates.io.
 

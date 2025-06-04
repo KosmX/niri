@@ -177,9 +177,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut display = Display::new().unwrap();
 
     // Increase buffer size
-    if let Some(max_buffer_size) = config.max_buffer_size {
-        display.backend().set_max_buffer_size(max_buffer_size);
-    }
+    display.backend().set_max_buffer_size(1024*1024);
     let mut state = State::new(
         config,
         event_loop.handle(),

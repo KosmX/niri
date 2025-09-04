@@ -1,4 +1,26 @@
 <h1 align="center"><img alt="niri" src="https://github.com/user-attachments/assets/07d05cd0-d5dc-4a28-9a35-51bae8f119a0"></h1>
+# Patching event loop overflow
+This branch contains a mostly ready-to-use patch for wayland event loop overflow.  
+active PR: https://github.com/YaLTeR/niri/pull/1699
+**This branch is not for merge, DO NOT open PR from here!**  
+
+Why and how?  
+```sh
+git clone --recursive https://github.com/KosmX/wayland-rs.git
+git clone https://github.com/KosmX/niri.git --branch buffer-patch
+
+cd niri
+cargo build --frozen --release --features default
+```
+niri is in `niri/target/release/niri`  
+
+This branch contains the patch, and a cargo crate-io testing override: it will use the local `wayland-rs` package instead of downloading from crates.io.
+
+
+And here is the rest of the README:
+
+
+<h1 align="center">niri</h1>
 <p align="center">A scrollable-tiling Wayland compositor.</p>
 <p align="center">
     <a href="https://matrix.to/#/#niri:matrix.org"><img alt="Matrix" src="https://img.shields.io/badge/matrix-%23niri-blue?logo=matrix"></a>

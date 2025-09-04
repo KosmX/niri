@@ -163,7 +163,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     niri::utils::signals::listen(&event_loop.handle());
 
     // Create the compositor.
-    let display = Display::new().unwrap();
+    let mut display = Display::new().unwrap();
+
+    // Increase buffer size
+    display.backend().set_max_buffer_size(1024*1024);
+
     let mut state = State::new(
         config,
         event_loop.handle(),

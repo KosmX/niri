@@ -36,6 +36,10 @@ default-features = false
 git = "https://github.com/Smithay/smithay.git"
 # path = "../smithay/smithay-drm-extras"
 
+[patch.crates-io]
+wayland-sys = { path = "../wayland-rs/wayland-sys" }
+wayland-backend = { path = "../wayland-rs/wayland-backend" }
+
 [package]
 name = "niri"
 version.workspace = true
